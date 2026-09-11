@@ -1,28 +1,20 @@
 // Program to delete data from the beginning of an array
 #include <stdio.h>
 int main(){
-    int a[50], n,pos,i;
+    int a[50], n,i;
     printf("Enter the size of array");
     scanf("%d",&n);
     printf("Enter the elements of array");
     for(i=0;i<n;i++)
         scanf("%d",&a[i]);
-    printf("Enter the position of element to delete");
-    scanf("%d",&pos);
-    if (pos<=0 || pos>n)
-    {
-        printf("invalid position");
+    for (i=0;i<n;i++){
+        a[i]=a[i+1];
     }
-    else{
-
-        for (i=pos-1;i<n-1;i++)
-            {a[i]=a[i+1];
-           }
-           n--;
-        }
-
+    n--;
 printf("Resultant array is\n");
 for(i=0;i<n;i++)
-    printf("%d  ",a[i]);    
-return 0;
+    {printf("%d  ",a[i]);
+    }
+    return 0;
+    
 }
